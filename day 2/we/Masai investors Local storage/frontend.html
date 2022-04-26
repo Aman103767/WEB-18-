@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel = "stylesheet" href = "common.css">
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    var arr = JSON.parse(localStorage.getItem("investorsData"));
+   var container = document.createElement("div");
+   container.setAttribute("Id","container");
+   document.querySelector("body").append(container);
+  console.log(arr)
+   arr.forEach(function(ele){
+
+    var card = document.createElement("div");
+    var img  = document.createElement("img");
+    img.setAttribute("src",ele.img);
+    var h3 = document.createElement("h3");
+    h3.innerText = ele.name;
+    var p = document.createElement("p");
+    p.innerText = ele.role;
+    var log = document.createElement("img");
+    log.setAttribute("src",ele.logo);
+    card.append(img,h3,p,log);                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
+    container.append(card);
+   
+   })
+
+  
+   
+</script>
