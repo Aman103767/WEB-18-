@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id = "data2"><input id = "email" placeholder="Enter your email">
+        <input id = "pass" placeholder="Enter you password">
+        <button type = "submit" value = "submit">login</button>
+    </form>
+    
+    
+</body>
+</html>
+<script>
+ document.querySelector("#data2").addEventListener("submit",myfun2)
+   var emailfirst = localStorage.getItem("emaildata");
+   var passfirst = localStorage.getItem("passworddata")
+   console.log(emailfirst,passfirst)
+   var head = document.createElement("h2");
+       document.querySelector("body").append(head);
+ function myfun2(){
+       event.preventDefault();
+    
+        var email =  data2.email.value;
+       var password = data2.pass.value;
+       
+      
+         if(emailfirst == email && passfirst == password){
+             
+           head.innerText = "login successful";
+           
+         }else{
+ 
+             head.innerText = "wrong credential";
+             
+         } 
+    
+        
+    
+       
+   
+      
+      
+ }
+
+</script>
