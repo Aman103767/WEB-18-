@@ -17,11 +17,11 @@
 </html>
 <script>
  document.querySelector("#data2").addEventListener("submit",myfun2)
-  var data = JSON.parse(localStorage.getItem("userdata"));
+  var data = JSON.parse(localStorage.getItem("userdata")) || [];
 
    var head = document.createElement("h2");
     document.querySelector("body").append(head);
-
+   
  function myfun2(){
        event.preventDefault();
        data.forEach(function(ele){
@@ -31,14 +31,24 @@
              
              head.innerText = "login successful";
              head.style.color = "green";
+             window.location.href = "navbar.html"; 
              
-           }else{
+           }
+           
+           
+           else{
    
                head.innerText = "wrong credential";
                head.style.color = "red";
            } 
           
+          
        })
+       if(data == 0) {
+            head.innerText = "Please sign up"
+            head.style.color = "orange"
+           }
+       
     
         
        
